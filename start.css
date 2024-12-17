@@ -100,10 +100,10 @@ div button {
   margin-left: 50px;
 }
 .books-container {
-    display: flex; /* ترتيب المربعات أفقيًا */
-    gap: 20px; /* مسافة بين المربعات */
-    overflow-x: auto; /* السماح بالتمرير الأفقي */
-    white-space: nowrap; /* منع العناصر من النزول للأسفل */
+    display: flex; 
+    gap: 20px; 
+    overflow-x: auto; 
+    white-space: nowrap; 
     padding: 10px;
     margin: 20px;
   }
@@ -111,14 +111,14 @@ div button {
   .book-card {
     border: 1px solid rgba(78, 77, 78, 0.704);
     text-align: center;
-    width: 200px; /* عرض المربع */
+    width: 200px; 
     padding: 10px;
    
-    flex-shrink: 0; /* منع تصغير المربع */
+    flex-shrink: 0; 
   }
   
   .book-card img {
-    width: 100%; /* الصورة تغطي عرض المربع */
+    width: 100%; 
     height: auto;
   }
   
