@@ -57,47 +57,19 @@ body {
   background-position: center;
   height: 600px;
 }
-div h1 {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-left: 40px;
-  font-size: 50px;
-  line-height: 1;
 
-}
-div h1:nth-last-of-type(1){
-  margin-bottom: 5px;
-}
-div h1:nth-last-of-type(2){
-  margin-top: 5px;
-  
-}
-
-div p:nth-last-of-type(1) {
-  font-family: Arial,  sans-serif;
-  width: 450px;
-    text-align: justify;
-   margin-top: 47px;
+div p {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-size: 12px;
-  margin-left: 40px;
   word-spacing: 2px;
-  line-height: 1.9;
-}
-div p:nth-last-of-type(2){
-  font-family: Arial,  sans-serif;
-  width: 450px;
-   
-   margin-top: 47px;
-  font-size: 12px;
- 
-
+  line-height: 1.5;
 }
 div button {
+  border: solid   #008f7a;
   padding: 10px;
- background-color: #2CB3C9;
- border: 2px solid #2CB3C9;
-  margin-left: 40px;
- 
+  background-color:  #008f7a;
+  cursor: pointer;
 }
 
 .b1 {
@@ -107,173 +79,232 @@ div button {
   padding-top: 5px;
 }
 
-.box img {
-  width: 200px;
+.box {
+  width: 250px;
   margin-top: 100px;
-  box-shadow: 2px 2px 2px 2px rgb(77, 185, 149);
+  box-shadow: 0px 0px 2px 2px rgb(77, 185, 149);
   border-radius: 2px;
 }
-
+.box p {
+  text-align: center;
+}
+.box h3 {
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.box i {
+  color: rgb(77, 185, 149);
+  font-size: 50px;
+  padding-top: 15px;
+  margin-left: 95px;
+}
 #a5 {
   display: block;
   text-align: left;
   margin-top: 70px;
+  margin-right: 0px;
+}
+#a5 img{
+  max-width: 100%;
+  height: auto;
+  margin-left: 100px;
 }
 #bb {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 80%;
+  
 }
 
+#a6 h1:first-of-type {
+  margin-bottom: 5px; /* تقليل المسافة أسفل "WELCOME TO" */
+  line-height: 1.2; /* تقليل المسافة بين السطور */
+}
+
+#a6 h1:last-of-type {
+  margin-top: 0; /* إزالة المسافة العلوية فوق "BOOK STORE" */
+  color: rgb(77, 185, 149); /* لون النص */
+}
+
+/* تخصيص باقي العناصر في #a6 */
 #a6 {
   padding-top: 150px;
   width: 400px;
-  margin-left: 50px;
+  margin-left: 140px;
+  
 }
+
+.para{
+  margin-top: 10px;
+  margin-left: 40px;
+  width: 160%;
+  margin: 0 auto;
+  text-align: justify;
+  word-spacing: 2px;
+  
+  font-size: 14px;
+}
+
 .books-container {
-    display: flex; 
-    gap: 20px; 
-    overflow-x: auto; 
-    white-space: nowrap; 
-    padding: 20px;
-    margin: 20px;
-  }
-  
-  .book-card {
-    border: 1px solid rgba(78, 77, 78, 0.704);
-    text-align: center;
-    width: 200px; 
-    padding: 10px;
-   
-    flex-shrink: 0; 
-  }
-  
-  .book-card img {
-    width: 80%; 
-    height: auto;
-  }
-  
-  .book-card h1 {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 5px 0;
-  }
-  
-  .book-card p {
-    font-size: 12px;
-    color: rgb(148, 148, 148);
-    margin: 3px 0;
-    line-height: 1.2;
-  }
-  
-  .book-card h3 {
-    font-size: 16px;
-    font-weight: bold;
-    color: black;
-    margin: 5px 0;
-  }
-  
-  .book-card .old-price {
-    text-decoration: line-through;
-    font-size: 12px;
-    color: black;
-    margin-left: 5px;
-    vertical-align: -2px;
-  }
-  .book-card p:nth-last-of-type(2){
-    color: rgb(78, 203, 203);
-  }
-  
-  .book-card button {
-    margin-top: 5px;
-    padding: 5px 10px;
-    background-color: white;
-    border: 2px solid rgb(16, 153, 163);
-    color: black;
-    cursor: pointer;
-  }
-  .book-card:hover{
-    box-shadow: 0px 0px 2px 1px rgb(7, 188, 149);
-    
-  }
-  .Arrivals2 {
-    display: flex; 
-    gap: 20px; 
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 10px;
-    margin: 20px;
-  }
-  .Arrivals {
-    display: flex; 
-    gap: 20px; 
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 10px;
-    margin: 20px;
-  }
-  
-  
-  .bookk {
-    border: 1px solid rgba(78, 77, 78, 0.704);
-    text-align: center;
-    width: 200px; 
-    padding: 30px;
-   
-    flex-shrink: 0; 
-  }
-  
-  .bookk img {
-    width: 80%; 
-    height: auto;
-  }
-  
-  .bookk h1 {
-    
-    font-weight: 400;
-    font-size: 18px;
-    margin: 5px 0;
-    font-family:  Arial, sans-serif;
-  }
-  .bookk button {
-    margin-top: 5px;
-    padding: 5px 10px;
-    background-color: white;
-    border: 2px solid rgb(16, 153, 163);
-    color: black;
-    cursor: pointer;
-  }
-  .bookk:hover{
-    box-shadow: 0px 0px 2px 1px rgb(7, 188, 149);
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
+  margin: 20px;
+}
 
-    
-  }
-  .Arrivals i,.Arrivals2 i,.bookk i{
-    color: rgb(10, 176, 151);
+.book-card {
+  border: 1px solid rgba(78, 77, 78, 0.704);
+  text-align: center;
+  width: 200px;
+  padding: 10px;
 
-  }
-  .bookk {
-    overflow: hidden; 
+  flex-shrink: 0;
+}
+
+.book-card img {
+  width: 100%;
+  height: auto;
+}
+
+.book-card h1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.book-card p {
+  font-size: 12px;
+  color: rgb(148, 148, 148);
+  margin: 3px 0;
+  line-height: 1.2;
+}
+
+.book-card h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  margin: 5px 0;
+}
+
+.book-card .old-price {
+  text-decoration: line-through;
+  font-size: 12px;
+  color: black;
+  margin-left: 5px;
+  vertical-align: -2px;
+}
+.book-card p:nth-last-of-type(2) {
+  color: rgb(78, 203, 203);
+}
+
+.book-card button {
+  margin-top: 5px;
+  padding: 5px 10px;
+  background-color: white;
+  border: 2px solid rgb(16, 153, 163);
+  color: black;
+  cursor: pointer;
+}
+.book-card:hover {
+  box-shadow: 0px 0px 2px 1px rgb(7, 188, 149);
+}
+.Arrivals2 {
+  display: flex; 
+  gap: 20px; 
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px;
+  margin: 20px;
+}
+.Arrivals {
+  display: flex; 
+  gap: 20px; 
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px;
+  margin: 20px;
+}
+
+
+.bookk {
+  border: 1px solid rgba(78, 77, 78, 0.704);
+  text-align: center;
+  width: 200px; 
+  padding: 30px;
+ 
+  flex-shrink: 0; 
 }
 
 .bookk img {
-    width: 20%%; 
-    transition: transform 0.3s ease; 
+  width: 80%; 
+  height: auto;
+}
+
+.bookk h1 {
+  
+  font-weight: 400;
+  font-size: 18px;
+  margin: 5px 0;
+  
+}
+.bookk button {
+  margin-top: 5px;
+  padding: 5px 10px;
+  background-color: white;
+  border: 2px solid rgb(16, 153, 163);
+  color: black;
+  cursor: pointer;
+}
+.bookk:hover{
+  box-shadow: 0px 0px 2px 1px rgb(7, 188, 149);
+
+  
+}
+.Arrivals i,.Arrivals2 i,.bookk i{
+  color: rgb(10, 176, 151);
+
+}
+.bookk {
+  overflow: hidden; 
+}
+
+.bookk img {
+  width: 70%; 
+  transition: transform 0.3s ease; 
 }
 .bookk:hover img {
-    transform: scale(1.05); 
+  transform: scale(1.05); 
 }
 .Arrivals a{
-  text-decoration: none;
-  color: inherit;
+text-decoration: none;
+color: inherit;
 }
 .Arrivals2 a{
-  text-decoration: none;
-  color: inherit;
+text-decoration: none;
+color: inherit;
 }
-.link{
-  color: black;
-  text-decoration: none;
+.e {
+  display: flex;
+  
+  background-color: #f3efef;
+  
+  margin: 0;
+ 
+  width: 100%;
+  box-sizing: border-box;
 }
+
+.end, .aend, .bend, .cend, .dend {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+}
+
+
+
 /*######################review-container####################*/
 
 #review-container {
@@ -394,3 +425,114 @@ div button {
 
 
 
+
+/* إزالة النقاط من القوائم */
+.bend ul, .aend ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; /* إزالة الحشوات الافتراضية */
+}
+ul li{
+  margin-bottom: 10px;
+}
+
+/* جعل العناوين والقوائم محاذية لليسار */
+.aend, .bend {
+  text-align: left;
+}
+
+.aend h2, .bend h2 {
+  text-align: left; /* محاذاة العنوان لليسار */
+  margin-bottom: 10px; /* مسافة بين العنوان والقائمة */
+  padding-left: 10px; /* إزاحة بسيطة إذا لزم الأمر */
+}
+
+.aend ul, .bend ul {
+  text-align: left; /* محاذاة النص داخل القائمة لليسار */
+  padding-left: 10px; /* ضمان توافق النقاط مع بداية العنوان */
+  margin: 0; /* إزالة الهوامش الافتراضية */
+}
+
+.toop {
+  margin-top: 10px;
+  margin-left: 30px !important; /* إزاحة الفقرة من البداية */
+  word-spacing: 3px; 
+  text-align: justify; 
+  text-align-last: justify; 
+  line-height: 1.8; 
+  margin: 0 auto; 
+}
+.aend{
+  margin-left: 90px;
+}
+.dend {
+  text-align: left; /* محاذاة العنوان والعناصر لليسار */
+  margin-left: 50px; /* إزاحة الحاوية من اليسار */
+
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column; /* جعل العناصر في تخطيط عمودي */
+  align-items: flex-start; /* محاذاة العناصر لليسار */
+  gap: 10px; /* مسافة بين العناصر */
+  margin-top: 10px; /* مسافة بين العنوان والمجموعة */
+}
+
+.input-group input {
+  width: 200px; /* عرض الحقل */
+  padding: 10px; /* مساحة داخلية */
+  border: 1px solid #ccc; /* إطار رمادي */
+  border-radius: 20px; /* حواف مستديرة */
+  height: 10px;
+  background-color: #e1d7d7;
+}
+
+.input-group button {
+  width: 130px; /* عرض الزر */
+  padding: 10px 20px; /* مساحة داخلية */
+  background-color:  #008f7a; /* لون الخلفية */
+  color: white; /* لون النص */
+  border: none; /* إزالة الإطار */
+  border-radius: 20px; /* حواف مستديرة */
+  cursor: pointer; /* مؤشر اليد عند التمرير */
+  text-align: center; /* توسيط النص داخل الزر */
+}
+.se{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.se i{
+  margin-right: 10px;
+  cursor: pointer;
+}
+.dend , .aend , .bend , .cend {
+  font-family: Arial, Helvetica, sans-serif;
+}
+#a6 h1{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.ph{
+  margin-top: 10px;
+  width: auto;
+  width: 180%;
+  margin: 0 auto;
+  text-align: justify;
+  word-spacing: 7px;
+  
+  line-height: 1.9;
+  font-size: 14px;
+}
+.link{
+  color: black;
+  text-decoration: none;
+}
+.welcom{
+  margin-bottom: 3px;
+}
+.bookpp{
+  margin-top: 0;
+
+}
