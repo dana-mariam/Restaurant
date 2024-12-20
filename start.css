@@ -239,7 +239,8 @@ div button {
 }
 
 .bookk img {
-  width: 80%; 
+  margin-top: -10%;
+  width: 90%; 
   height: auto;
 }
 
@@ -560,7 +561,7 @@ ul li{
   margin-bottom: 3px;
 }
 .bookpp{
-  margin-top: 0;
+  margin-top:0;
 
 }
 
