@@ -11,7 +11,6 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  font-size: 20px;
 }
 #a2 {
   display: flex;
@@ -34,10 +33,11 @@ body {
   margin-left: 2.5rem;
 }
 #a2 p {
+  font-size: .9625rem;
   border: none;
   margin: 0 auto;
   text-align: center;
-  word-spacing: .625;
+  word-spacing: 1.225rem;
 }
 .icons-left {
   display: flex;
@@ -570,9 +570,13 @@ ul li{
  
 
 }
-.aend,.bend,.cend,.dend{
-  margin-bottom: .875rem;
+.aend h2,.bend h2,.cend h2,.dend h2 {
+  margin-bottom: 1.875rem;
 }
+.e img{
+  margin-bottom: 1.875rem;
+}
+
 
 .input-group {
   display: flex;
@@ -590,7 +594,9 @@ ul li{
   height: .625rem;
   background-color: #e1d7d7;
 }
-
+.bend p{
+  margin-bottom: 0;
+}
 .input-group button {
   width: 8.125rem; 
   padding: .625rem 1.25rem; 
