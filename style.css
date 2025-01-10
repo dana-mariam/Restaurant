@@ -53,13 +53,20 @@ button:hover {
   cursor: pointer;
 }
 
+
+
+
 .delete-icon {
   color: #dc3545; /* لون سلة القمامة */
   cursor: pointer;
 }
 
 .delete-icon:hover {
+
   color: #a71d2a; /* لون عند التمرير */
+
+  color: #a71d2a; /* لون عند التمرير */
+
 }
 .input-container {
   position: relative;
@@ -158,6 +165,7 @@ button:hover {
   height: 10px;
 }
 
+
 i {
   margin-left: 10px;
   cursor: pointer;
@@ -169,6 +177,7 @@ i {
   padding-top: 20px; /* إضافة بعض المسافة العلوية إذا لزم الأمر */
 }
 .modal {
+
   display: none;
   position: fixed;
   z-index: 1000;
@@ -368,3 +377,206 @@ button:disabled:hover {
 .delete-button {
   background-color: red !important;
 }
+.model{
+display: none;
+position: fixed;
+z-index: 1000;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+background-color: #f9f9f9;
+margin: 15% auto;
+padding: 20px;
+border: 1px solid #888;
+width: 30%;
+border-radius: 10px;
+text-align: center;
+}
+
+.modal-buttons {
+display: flex;
+justify-content: space-around;
+margin-top: 20px;
+}
+
+.save-button {
+background-color: #007bff;
+color: white;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+border-radius: 5px;
+}
+
+.cancel-button {
+background-color: #dc3545;
+color: white;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+border-radius: 5px;
+}
+
+.save-button:hover {
+background-color: #0056b3;
+}
+
+.cancel-button:hover {
+background-color: #c82333;
+}
+.modal {
+display: none;
+position: fixed;
+z-index: 1000;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+background-color: #f9f9f9;
+margin: 15% auto;
+padding: 20px;
+border: 1px solid #888;
+width: 30%;
+border-radius: 10px;
+text-align: center;
+}
+
+.modal-buttons {
+display: flex;
+justify-content: space-around;
+margin-top: 20px;
+}
+
+.save-button {
+background-color: #b5d6ac;
+color: white;
+border: none;
+width: 70px;
+height: 30px;
+display: flex;
+cursor: pointer;
+border-radius: 5px;
+text-align: center;
+justify-content: center;
+align-items: center;
+}
+
+.cancel-button {
+background-color: #dc3545;
+color: white;
+border: none;
+display: flex;
+width: 70px;
+height: 30px;
+cursor: pointer;
+border-radius: 5px;
+justify-content: center;
+align-items: center;
+}
+
+.save-button:hover {
+background-color: #8c97a1;
+}
+
+.cancel-button:hover {
+background-color: #c82333;
+}
+.button-container {
+display: flex; /* لتكون الأزرار في صف واحد */
+justify-content: center; /* لمحاذاة الأزرار في المنتصف */
+gap: 20px; /* المسافة بين الأزرار */
+margin: 0 auto; /* لإبعاد الحاوية عن الأطراف وجعلها في المنتصف */
+padding: 20px; /* إضافة مسافة داخلية للحاوية */
+width: 82%; /* تحديد عرض الحاوية بالكامل */
+margin-left: 120px;
+}
+
+.delete-button {
+padding: 10px 20px;
+font-size: 16px;
+background-color: #dc3545; /* لون الخلفية */
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+flex: 1; /* لجعل الأزرار متساوية الحجم */
+
+}
+
+.delete-button:hover {
+background-color: #c82333; /* لون عند التمرير */
+}
+.modal {
+display: none;
+position: fixed;
+z-index: 1000;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+background-color: #f9f9f9;
+margin: 15% auto;
+padding: 20px;
+border: 1px solid #888;
+width: 20%;
+border-radius: 10px;
+text-align: center;
+}
+
+.modal-buttons {
+display: flex;
+justify-content: center;
+gap: 10px;
+margin-top: 20px;
+}
+
+.save-button {
+background-color:#8c97a1;
+color: white;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+border-radius: 5px;
+}
+
+.cancel-button {
+background-color: #dc3545;
+color: white;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+border-radius: 5px;
+}
+button:disabled {
+background-color: rgb(141, 82, 82); /* اللون الأحمر عند التعطيل */
+cursor: not-allowed; /* إزالة إمكانية الضغط */
+opacity: 0.6; /* جعل الزر يبدو غير مفعّل */
+}
+
+button:disabled:hover {
+background-color: rgb(97, 73, 68); /* عدم تغيير اللون عند التمرير */
+}
+.delete-all{
+background-color: red !important;
+}
+.delete-button{
+background-color: red !important;
+}
+
+
