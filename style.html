@@ -10,7 +10,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     
-    
   </head>
   <body>
     <div class="edit-modal modal">
@@ -117,8 +116,6 @@
 ];
   
     let tasks = []; // المصفوفة الرئيسية
-  
-
   
     // حفظ المهام في التخزين المحلي
    
@@ -442,15 +439,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const clearError = () => {
   errorDiv.textContent = "";
  };
-  
     // عند تحميل الصفحة
     document.addEventListener("DOMContentLoaded", () => {
   loadTasksFromLocalStorage();
   renderTasks();
   updateDatalist(); // تحديث قائمة الخيارات
 });
-
-
   </script>
   </body>
 </html>
