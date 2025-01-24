@@ -15,18 +15,20 @@
     <div class="container">
       <h1>Todo Input</h1>
       <div class="input-box">
+        <form name="todoForm" onsubmit="(event) => addTask(event)"></form>
         <div class="input-container">
           <i class="fa-solid fa-book"></i>
           <input
           type="text"
-          class="todo-input"
+          name="taskInput"
           placeholder="Enter your task here..."
-          list="customTasks"
+          
         />
-        <datalist id="customTasks"></datalist>
+        
         </div>
         <div class="error-message"></div>
         <button class="add-task-button">Add new task</button>
+      </form>
       </div>
     </div>
 
@@ -86,8 +88,9 @@
 </body>
 
   <script>
+  const todoInput = document.querySelector("input[name='taskInput']"); const errorDiv = document.querySelector(".error-message");
    const addTaskButton = document.querySelector(".add-task-button");
-   const todoInput = document.querySelector(".todo-input"); const errorDiv = document.querySelector(".error-message");
+   //const todoInput = document.querySelector(".todo-input"); const errorDiv = document.querySelector(".error-message");
    const taskList = document.querySelector(".task-list");
    const filterAllButton = document.querySelector(".filter-all");
    const filterDoneButton = document.querySelector(".filter-done");
@@ -232,15 +235,8 @@ const saveTasksToLocalStorage = () => {
   });
 };
 
-// حفظ المهام المحذوفة
-const saveDeletedTask = (taskText) => {
-  const savedDeletedTasks = localStorage.getItem("deletedTasks");
-  let deletedTasks = savedDeletedTasks ? JSON.parse(savedDeletedTasks) : [];
-  if (!deletedTasks.includes(taskText)) {
-    deletedTasks.push(taskText);
-  }
-  localStorage.setItem("deletedTasks", JSON.stringify(deletedTasks));
-};
+
+
 const updateButtonStates = () => {
   // زر "Delete All Tasks"
   if (tasks.length === 0) {
@@ -266,6 +262,47 @@ document.addEventListener("DOMContentLoaded", () => {
   loadTasksFromLocalStorage();
   renderTasks();
   updateDatalist(); // تحديث القائمة المنسدلة عند التحميل
+});
+let activeFilter = localStorage.getItem("activeFilter") || "all"; // الحالة النشطة الافتراضية
+
+// عرض جميع المهام
+filterAllButton.addEventListener("click", () => {
+  renderTasks();
+  setActiveFilter("all");
+});
+
+// عرض المهام المكتملة فقط
+filterDoneButton.addEventListener("click", () => {
+  renderTasks(tasks.filter((task) => task.done));
+  setActiveFilter("done");
+});
+
+// عرض المهام غير المكتملة فقط
+filterTodoButton.addEventListener("click", () => {
+  renderTasks(tasks.filter((task) => !task.done));
+  setActiveFilter("todo");
+});
+
+// حفظ الحالة النشطة للفلتر
+const setActiveFilter = (filter) => {
+  activeFilter = filter;
+  localStorage.setItem("activeFilter", filter);
+};
+
+// تطبيق الفلتر النشط عند تحميل الصفحة
+document.addEventListener("DOMContentLoaded", () => {
+  loadTasksFromLocalStorage();
+
+  // تطبيق الفلتر النشط
+  if (activeFilter === "done") {
+    renderTasks(tasks.filter((task) => task.done));
+  } else if (activeFilter === "todo") {
+    renderTasks(tasks.filter((task) => !task.done));
+  } else {
+    renderTasks();
+  }
+
+  updateDatalist(); 
 });
 
 
@@ -293,23 +330,17 @@ confirmDeleteButton.addEventListener("click", () => {
     tasks = [];
   }
 
-  // حفظ المهمة المحذوفة في التخزين المحلي
-  if (deletedTaskText) {
-    const savedDeletedTasks = localStorage.getItem("deletedTasks");
-    let deletedTasks = savedDeletedTasks ? JSON.parse(savedDeletedTasks) : [];
-    deletedTasks.push(deletedTaskText);
-    localStorage.setItem("deletedTasks", JSON.stringify(deletedTasks));
-  }
+
+ 
 
   saveTasksToLocalStorage();
   renderTasks();
-  updateDatalist(); // تحديث القائمة المنسدلة
-  deleteModal.style.display = "none"; // إخفاء نافذة التأكيد
-  currentDeleteType = null; // إعادة تعيين نوع الحذف
+  updateDatalist(); 
+  deleteModal.style.display = "none"; 
+  currentDeleteType = null; 
 });
 
 
-    // إضافة مهمة جديدة
     addTaskButton.addEventListener("click", () => {
   const task = todoInput.value.trim();
   if (task === "" || !isNaN(task.charAt(0)) || task.length < 5) {
@@ -322,18 +353,18 @@ confirmDeleteButton.addEventListener("click", () => {
   clearError();
   saveTasksToLocalStorage();
   renderTasks();
-  updateDatalist(); // تحديث قائمة الخيارات
+  updateDatalist(); 
 });
   
-    // عرض جميع المهام
+   
     filterAllButton.addEventListener("click", () => renderTasks());
   
-    // عرض المهام المكتملة فقط
+    
     filterDoneButton.addEventListener("click", () =>
       renderTasks(tasks.filter((task) => task.done))
     );
   
-    // عرض المهام غير المكتملة فقط
+    
     filterTodoButton.addEventListener("click", () =>
       renderTasks(tasks.filter((task) => !task.done))
     );
@@ -344,13 +375,13 @@ confirmDeleteButton.addEventListener("click", () => {
       deleteModal.style.display = "block";
     });
   
-    // حذف جميع المهام
+   
     deleteAllTasksButton.addEventListener("click", () => {
       currentDeleteType = "all";
       deleteModal.style.display = "block";
     });
   
-    // حفظ التعديلات
+    
     saveTaskButton.addEventListener("click", () => {
       if (currentEditIndex !== null) {
         tasks[currentEditIndex].text = editTaskInput.value.trim();
@@ -360,49 +391,49 @@ confirmDeleteButton.addEventListener("click", () => {
       }
     });
   
-    // إلغاء التعديلات
+    
     cancelTaskButton.addEventListener("click", () => {
       editModal.style.display = "none";
       currentEditIndex = null;
     });
   
-    // تأكيد الحذف
+   
     confirmDeleteButton.addEventListener("click", () => {
   if (currentDeleteIndex !== null) {
-    // حذف مهمة معينة
+    
     tasks.splice(currentDeleteIndex, 1);
-    currentDeleteIndex = null; // إعادة تعيين المؤشر
+    currentDeleteIndex = null; 
   } else if (currentDeleteType === "done") {
-    // حذف المهام المكتملة
+    
     tasks = tasks.filter((task) => !task.done);
   } else if (currentDeleteType === "all") {
-    // حذف جميع المهام
+  
     tasks = [];
   }
 
-  saveTasksToLocalStorage(); // حفظ التغييرات في التخزين المحلي
-  renderTasks(); // إعادة عرض المهام
+  saveTasksToLocalStorage(); 
+  renderTasks(); 
   updateButtonStates();
-  deleteModal.style.display = "none"; // إخفاء نافذة التأكيد
-  currentDeleteType = null; // إعادة تعيين نوع الحذف
+  deleteModal.style.display = "none";
+  currentDeleteType = null; 
 });
   
-    // إلغاء الحذف
+   
     cancelDeleteButton.addEventListener("click", () => {
       deleteModal.style.display = "none";
       currentDeleteType = null;
     });
   
-    // إظهار رسالة الخطأ
+   
     const showError = (message) => {
    errorDiv.textContent = message;
    };
 
-// مسح رسالة الخطأ
+
   const clearError = () => {
   errorDiv.textContent = "";
    };
-    
+  
 
   </script>
   </body>
